@@ -1,6 +1,7 @@
 package PGO_12c.cw2;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Person {
 
@@ -44,6 +45,13 @@ public class Person {
             throw new ValidationException("Date of birth must not be empty");
         }
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Period getAge() {
+        if(dateOfBirth == null) {
+            return null;
+        }
+        return Period.between(dateOfBirth, LocalDate.now());
     }
 
     public Address getAddress() {
