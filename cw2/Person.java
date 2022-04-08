@@ -1,7 +1,10 @@
 package PGO_12c.cw2;
 
+import java.sql.Array;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Person {
 
@@ -9,9 +12,18 @@ public class Person {
     private String surname;
     private LocalDate dateOfBirth;
     private Address address;
+    private Book book;
 
     public Person(String name, String surname, LocalDate dateOfBirth, Address address) {
+        setName(name);
+        setSurname(surname);
+        setDateOfBirth(dateOfBirth);
+        setAddress(address);
+    }
 
+    public Person(String name, String surname) {
+        setName(name);
+        setSurname(surname);
     }
 
     public String getName() {
@@ -50,8 +62,9 @@ public class Person {
     public Period getAge() {
         if(dateOfBirth == null) {
             return null;
+        } else {
+            return Period.between(dateOfBirth, LocalDate.now());
         }
-        return Period.between(dateOfBirth, LocalDate.now());
     }
 
     public Address getAddress() {
@@ -62,8 +75,19 @@ public class Person {
         this.address = address;
     }
 
-    public void PublishBook() {
-
+    public Book getBook() {
+        return book;
     }
 
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Book PublishBook(String name, Genre genre, Lang language, LocalDate publishDate, Person author) {
+        ArrayList<Person> authors = new ArrayList<Person>();
+        authors.add(this);
+        Book newBook = new Book(name, genre, language, publishDate, authors);
+        newBook.setPublishDate(publishDate);
+        return newBook;
+    }
 }
