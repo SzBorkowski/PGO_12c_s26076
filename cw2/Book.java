@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Book {
 
-    private Long ID;
+    private long ID=hashCode();
     private String name;
     private Genre genre;
     private Lang language;
@@ -15,7 +15,7 @@ public class Book {
     private boolean isAvailable = true;
     private String personBorrowing;
 
-    public Book(Long ID, String name, Genre genre, Lang language, LocalDate publishDate, int borrowCount, boolean isAvailable) {
+    public Book(long ID, String name, Genre genre, Lang language, LocalDate publishDate, int borrowCount, boolean isAvailable) {
         setID(ID);
         setName(name);
         setGenre(genre);
@@ -33,11 +33,11 @@ public class Book {
         setBorrowCount(borrowCount);
     }
 
-    public Long getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
