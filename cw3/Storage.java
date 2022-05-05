@@ -9,6 +9,10 @@ public class Storage {
     }
 
     public void setDeliveryTime(int deliveryTime) {
+        if (deliveryTime > 0) {
             this.deliveryTime = deliveryTime;
+        } else {
+            throw new RuntimeException("Delivery time cannot be 0");
+        }
     }
 }
