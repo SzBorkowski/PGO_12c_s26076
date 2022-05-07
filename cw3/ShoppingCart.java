@@ -38,8 +38,8 @@ public class ShoppingCart {
     public void totalDeliveryTime() {
         int temp = 0;
         for (int i = 0; i < shoppingCartProducts.size(); i++) {
-            if ( > temp) {
-                temp = ;
+            if (shoppingCartProducts.get(i).getStorage().getDeliveryTime() > temp) {
+                temp = shoppingCartProducts.get(i).getStorage().getDeliveryTime();
             }
         }
     }
