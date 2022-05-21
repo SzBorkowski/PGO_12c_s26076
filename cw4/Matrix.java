@@ -37,7 +37,17 @@ public class Matrix {
     }
 
     public static void insertRow(int[] row) {
-
+        if (row.length != tempMatrix.length) {
+            throw new RuntimeException("Incorrect row size");
+        } else {
+            for (int i = 0; i < tempMatrix[0].length; i++) {
+                if (tempMatrix[i][0] == 0) {
+                    for (int j = 0; j < row.length; j++) {
+                            tempMatrix[i][j] = row[j];
+                    } break;
+                }
+            }
+        }
     }
 
     public static Matrix create() {
@@ -56,18 +66,62 @@ public class Matrix {
     }
 
     public Matrix add(Matrix m) {
-
+        if (m.getMainMatrix().length != this.mainMatrix.length ||
+                m.getMainMatrix()[0].length != this.mainMatrix[0].length) {
+            throw new RuntimeException("Cannot add these matrixes.");
+        } else {
+            for (int i = 0; i < this.mainMatrix.length; i++) {
+                for (int j = 0; j < this.mainMatrix.length; j++) {
+                    this.mainMatrix[i][j] = this.mainMatrix[i][j] + m.getMainMatrix()[i][j];
+                }
+            }
+        }
+        return this;
     }
 
-    public Matrix add(Matrix m1, Matrix m2) {
-
+    public static Matrix add(Matrix m1, Matrix m2) {
+        int newlyAdded[][] = new int[m1.getMainMatrix().length][m1.getMainMatrix()[0].length];
+        Matrix finallyAdded = new Matrix(newlyAdded);
+        if (m1.getMainMatrix().length != m2.getMainMatrix().length ||
+                m1.getMainMatrix()[0].length != m2.getMainMatrix()[0].length) {
+            throw new RuntimeException("Cannot add these matrixes.");
+            } else {
+            for (int i = 0; i < m1.mainMatrix.length; i++) {
+                for (int j = 0; j < m1.mainMatrix.length; j++) {
+                    newlyAdded[i][j] = m1.mainMatrix[i][j] + m2.getMainMatrix()[i][j];
+                }
+            }
+        }
+        return finallyAdded;
     }
 
     public Matrix subtract(Matrix m) {
-
+        if (m.getMainMatrix().length != this.mainMatrix.length ||
+                m.getMainMatrix()[0].length != this.mainMatrix[0].length) {
+            throw new RuntimeException("Cannot add these matrixes.");
+        } else {
+            for (int i = 0; i < this.mainMatrix.length; i++) {
+                for (int j = 0; j < this.mainMatrix.length; j++) {
+                    this.mainMatrix[i][j] = this.mainMatrix[i][j] - m.getMainMatrix()[i][j];
+                }
+            }
+        }
+        return this;
     }
 
     public Matrix subtract(Matrix m1, Matrix m2) {
-
+        int newlySubtracted[][] = new int[m1.getMainMatrix().length][m1.getMainMatrix()[0].length];
+        Matrix finallySubtracted = new Matrix(newlySubtracted);
+        if (m1.getMainMatrix().length != m2.getMainMatrix().length ||
+                m1.getMainMatrix()[0].length != m2.getMainMatrix()[0].length) {
+            throw new RuntimeException("Cannot add these matrixes.");
+        } else {
+            for (int i = 0; i < m1.mainMatrix.length; i++) {
+                for (int j = 0; j < m1.mainMatrix.length; j++) {
+                    newlySubtracted[i][j] = m1.mainMatrix[i][j] + m2.getMainMatrix()[i][j];
+                }
+            }
+        }
+        return finallySubtracted;
     }
 }
