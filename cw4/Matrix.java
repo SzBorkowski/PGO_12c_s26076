@@ -58,10 +58,13 @@ public class Matrix {
 
     public void print() {
         for (int i = 0; i < mainMatrix.length; i++) {
+            System.out.print("|");
             for (int j = 0; j < mainMatrix.length; j++) {
+                System.out.print(" ");
                 System.out.print(mainMatrix[i][j]);
+                System.out.print(" ");
             }
-            System.out.println();
+            System.out.println("|");
         }
     }
 
@@ -109,7 +112,7 @@ public class Matrix {
         return this;
     }
 
-    public Matrix subtract(Matrix m1, Matrix m2) {
+    public static Matrix subtract(Matrix m1, Matrix m2) {
         int newlySubtracted[][] = new int[m1.getMainMatrix().length][m1.getMainMatrix()[0].length];
         Matrix finallySubtracted = new Matrix(newlySubtracted);
         if (m1.getMainMatrix().length != m2.getMainMatrix().length ||
@@ -123,5 +126,37 @@ public class Matrix {
             }
         }
         return finallySubtracted;
+    }
+
+    public Matrix multiply(Matrix m) {
+        if (this.mainMatrix.length != m.getMainMatrix()[0].length) {
+            throw new RuntimeException("Cannot multiply.");
+        } else {
+            for (int i = 0; i < this.getMainMatrix().length; i++) {
+                for (int j = 0; j < m.getMainMatrix()[0].length; j++) {
+                    for (int k = 0; k < this.getMainMatrix()[0].length; k++) {
+                        this.getMainMatrix()[i][j] += this.getMainMatrix()[i][k] * m.getMainMatrix()[k][j];
+                    }
+                }
+            }
+        }
+        return this;
+    }
+
+    public static Matrix multiply(Matrix m1, Matrix m2) {
+        int newlyMultiplied[][] = new int[m1.getMainMatrix().length][m2.getMainMatrix()[0].length];
+        Matrix finallyMultiplied = new Matrix(newlyMultiplied);
+        if (m1.getMainMatrix().length != m2.getMainMatrix()[0].length) {
+            throw new RuntimeException("Cannot multiply.");
+        } else {
+            for (int i = 0; i < m1.getMainMatrix().length; i++) {
+                for (int j = 0; j < m2.getMainMatrix()[0].length; j++) {
+                    for (int k = 0; k < m1.getMainMatrix()[0].length; k++) {
+                        newlyMultiplied[i][j] += m1.getMainMatrix()[i][k] * m2.getMainMatrix()[k][j];
+                    }
+                }
+            }
+        }
+        return finallyMultiplied;
     }
 }
