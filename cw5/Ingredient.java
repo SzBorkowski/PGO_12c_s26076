@@ -5,7 +5,11 @@ public class Ingredient {
     private String name;
     private int baseReagent;
 
-    public int getReagent() {
+    public int getBaseReagent() {
         return baseReagent;
+    }
+
+    public int getReagent() {
+        return 0;
     }
 }
