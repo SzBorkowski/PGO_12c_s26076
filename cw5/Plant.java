@@ -14,7 +14,7 @@ class Flower extends Plant {
 
     @Override
     public int getReagent() {
-        return getReagent()*2;
+        return super.getReagent()*2;
     }
 }
 
@@ -22,6 +22,6 @@ class Root extends Plant {
 
     @Override
     public int getReagent() {
-        return getReagent()/2;
+        return super.getReagent()/2;
     }
 }

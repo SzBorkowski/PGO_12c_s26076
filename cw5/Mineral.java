@@ -30,6 +30,6 @@ public class Mineral extends Ingredient {
 
     @Override
      public int getReagent() {
-        return getReagent()+magicPower;
+        return super.getReagent()+magicPower;
     }
  }
