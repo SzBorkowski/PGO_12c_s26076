@@ -9,6 +9,10 @@ class Liquid extends Ingredient {
         this.dissolubility = dissolubility;
     }
 
+    public int getDissolubility() {
+        return dissolubility;
+    }
+
     public void setDissolubility(int dissolubility) {
         if (dissolubility >= 0 && dissolubility <= 100) {
             this.dissolubility = dissolubility;
@@ -43,7 +47,7 @@ class Water extends Liquid {
     @Override
     public int getReagent() {
         if (distilated == false) {
-            return super.getReagent()/2;
+            return super.getReagent() / 2;
         } else {
             return super.getReagent();
         }
