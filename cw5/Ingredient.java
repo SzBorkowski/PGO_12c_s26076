@@ -33,4 +33,10 @@ public abstract class Ingredient {
     public int getReagent() {
         return baseReagent;
     }
+
+    @Override
+    public String toString()
+    {
+        return name;
+    }
 }

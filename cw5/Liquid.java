@@ -52,6 +52,12 @@ class Water extends Liquid {
             return super.getReagent();
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class Alcohol extends Liquid {
@@ -82,5 +88,11 @@ class Alcohol extends Liquid {
         } else {
             return 0;
         }
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString();
     }
 }
