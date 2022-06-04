@@ -21,12 +21,6 @@ class Mineral extends Ingredient {
     public int getReagent() {
         return getBaseReagent() + power;
     }
-
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
 }
 
 class Ore extends Mineral {
@@ -54,12 +48,6 @@ class Ore extends Mineral {
             return super.getReagent();
         }
     }
-
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
  }
 
  class Crystal extends Mineral {
@@ -83,10 +71,4 @@ class Ore extends Mineral {
      public int getReagent() {
         return super.getReagent() + magicPower;
     }
-
-     @Override
-     public String toString()
-     {
-         return super.toString();
-     }
  }

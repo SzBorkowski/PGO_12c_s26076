@@ -21,12 +21,6 @@ class Plant extends Ingredient {
     public int getReagent() {
         return getBaseReagent() * toxity;
     }
-
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
 }
 
 class Flower extends Plant {
@@ -39,12 +33,6 @@ class Flower extends Plant {
     public int getReagent() {
         return super.getReagent() * 2;
     }
-
-    @Override
-    public String toString()
-    {
-        return super.toString();
-    }
 }
 
 class Root extends Plant {
@@ -56,11 +44,5 @@ class Root extends Plant {
     @Override
     public int getReagent() {
         return super.getReagent() / 2;
-    }
-
-    @Override
-    public String toString()
-    {
-        return super.toString();
     }
 }

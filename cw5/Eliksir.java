@@ -32,7 +32,7 @@ public class Eliksir {
     }
 
     public int getPower() {
-        if (isCreated == true) {
+        if (isCreated == false) {
             throw new RuntimeException("Cannot check the power.");
         } else {
             return power;
@@ -68,7 +68,7 @@ public class Eliksir {
     }
 
     public void removeIngredient(Ingredient toRemove) {
-        if (isCreated = true) {
+        if (isCreated == true) {
             throw new RuntimeException("Elixir is already done.");
         } else {
             ingredients.remove(toRemove);
@@ -92,6 +92,6 @@ public class Eliksir {
     @Override
     public String toString()
     {
-        return super.toString();
+        return name + getIngredients();
     }
 }
