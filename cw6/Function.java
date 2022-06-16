@@ -1,12 +1,8 @@
 package PGO_12c.cw6;
 
-abstract class Function implements Fun {
+public abstract class Function implements Fun {
 
-    void increaseCoefficientsBy(double delta) {
+    abstract void increaseCoefficientsBy(double delta);
 
-    }
-
-    void decreaseCoefficientsBy(double delta) {
-
-    }
+    abstract void decreaseCoefficientsBy(double delta);
 }

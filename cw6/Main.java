@@ -35,4 +35,3 @@ public class Main {
                 System.out.println(df.format(Fun.minimum(f,-4,0,0.1))));
     }
 }
-}
