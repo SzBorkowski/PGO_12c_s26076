@@ -3,7 +3,6 @@ package PGO_12c.cw6;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class Main {
 
@@ -33,5 +32,15 @@ public class Main {
         System.out.println("Functions decreased by 1.2");
         funList.forEach(f ->
                 System.out.println(df.format(Fun.minimum(f,-4,0,0.1))));
+
+//Zadanie dodatkowe
+Fun fun = new Fun() {
+    @Override
+    public double f(double x) {
+        return 0;
+    }
+};
+//Klasa musi implementować metodę f(double x), więc użyjemy przeciążenia.
+//Dzięki temu możemy użyć f(double x) bez tworzenia klasy, która implementuje interfejs.
     }
 }
