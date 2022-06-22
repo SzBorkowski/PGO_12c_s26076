@@ -62,6 +62,8 @@ public class Main {
         albus.say("You are a wizzard, Harry", harry);
 
     }
+
+
 /* OUTPUT:
 
 Hello, I am Tom Marvolo Riddle

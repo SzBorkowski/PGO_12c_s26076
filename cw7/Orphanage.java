@@ -31,5 +31,6 @@ public class Orphanage {
 
     public void addChild(Child newKid) {
         kids.add(newKid);
+        newKid.setLocation(location);
     }
 }

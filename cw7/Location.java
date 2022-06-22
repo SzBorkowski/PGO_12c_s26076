@@ -1,5 +1,5 @@
 package Final;
 
 public enum Location {
-    England, London, Hogwarts
+    England, London, Hogwarts, GodricsHollow
 }

@@ -6,6 +6,7 @@ public class Child extends Character {
     private Location location;
 
     public Child(String name, Location location) {
+        super(name, location);
         this.name = name;
         this.location = location;
     }
@@ -24,10 +25,5 @@ public class Child extends Character {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    @Override
-    public String introduce() {
-        return "Hello, I am " + name;
     }
 }
