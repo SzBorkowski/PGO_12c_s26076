@@ -25,4 +25,12 @@ public class Voldemort extends Character {
             System.out.println("horcrux " + i);
         }
     }
+
+    public void target(Character character) {
+
+    }
+
+    public void castSpell(Spell spell) {
+
+    }
 }

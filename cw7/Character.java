@@ -13,7 +13,7 @@ public class Character {
         this.name = name;
         this.location = location;
         int health = 100;
-        characters.add(name);
+        characters.add(name + " : " + health);
     }
 
     public Character() {
@@ -62,13 +62,13 @@ public class Character {
     }
 
     public void doSth(String doWhat) {
-        System.out.println("I am " + getName() + ", I am " + doWhat);
+        System.out.println("I am " + name + ", I am " + doWhat);
     }
 
     public static void status() {
         System.out.println("====Status====");
         for (int i = 0; i < characters.size(); i++) {
-            System.out.println(characters.get(i) + " : 100");
+            System.out.println(characters.get(i));
         }
         System.out.println("==============");
     }
