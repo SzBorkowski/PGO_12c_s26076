@@ -6,18 +6,13 @@ public class Character {
 
     private String name;
     private Location location;
-    private static ArrayList<String> characters = new ArrayList<>();
-    private int health;
+    private static ArrayList<Character> characters = new ArrayList<>();
+    private int health = 100;
 
     public Character(String name, Location location) {
         this.name = name;
         this.location = location;
-        int health = 100;
-        characters.add(name + " : " + health);
-    }
-
-    public Character() {
-
+        characters.add(this);
     }
 
     public String getName() {
@@ -36,8 +31,20 @@ public class Character {
         this.location = location;
     }
 
+    public static ArrayList<Character> getCharacters() {
+        return characters;
+    }
+
+    public static void setCharacters(ArrayList<Character> characters) {
+        Character.characters = characters;
+    }
+
     public int getHealth() {
         return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public void introduce() {
@@ -45,7 +52,7 @@ public class Character {
     }
 
     public void say(String line, Character character) {
-        System.out.println(name + " to " + character.getName() + "\n" + line);
+        System.out.println(name + " to " + character.getName() + "\n\t" + line);
     }
 
     public void moveTo(Orphanage woolsOrphanage) {
@@ -65,10 +72,16 @@ public class Character {
         System.out.println("I am " + name + ", I am " + doWhat);
     }
 
+    public static void doSth(String doWhat, Character one, Character two, Character three) {
+        System.out.println("I am " + one.getName() + ", I am " + doWhat);
+        System.out.println("I am " + two.getName() + ", I am " + doWhat);
+        System.out.println("I am " + three.getName() + ", I am " + doWhat);
+    }
+
     public static void status() {
         System.out.println("====Status====");
-        for (int i = 0; i < characters.size(); i++) {
-            System.out.println(characters.get(i));
+        for (Character character : characters) {
+            System.out.println(character.getName() + " : " + character.getHealth());
         }
         System.out.println("==============");
     }
