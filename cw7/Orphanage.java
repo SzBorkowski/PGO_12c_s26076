@@ -18,6 +18,9 @@ public class Orphanage {
     }
 
     public void setName(String name) {
+        if (name.isEmpty() || name == null) {
+            throw new StoryViolationException("Name cannot be blank.");
+        } else
         this.name = name;
     }
 
@@ -26,6 +29,9 @@ public class Orphanage {
     }
 
     public void setLocation(Location location) {
+        if (location == null) {
+            throw new StoryViolationException("Location cannot be blank.");
+        } else
         this.location = location;
     }
 

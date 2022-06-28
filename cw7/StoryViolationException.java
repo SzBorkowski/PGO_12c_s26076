@@ -7,6 +7,6 @@ public class StoryViolationException extends RuntimeException {
     }
 
     public void printMessage() {
-
+        System.out.println("error");
     }
 }

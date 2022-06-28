@@ -13,12 +13,18 @@ public class Voldemort extends Character {
     }
 
     public void createHorcruxes(int howMany) {
+        if (howMany <= 0) {
+            throw new StoryViolationException("Wrong number.");
+        } else
         for (int i = 1; i <= howMany; i++) {
             horcruxes.add(i);
         }
     }
 
     public void printHorcruxes() {
+        if (horcruxes.isEmpty()) {
+            throw new StoryViolationException("There are no horcruxes to print.");
+        } else
         System.out.println("Created horcruxes:");
         for (int i = 1; i <= horcruxes.size(); i++) {
             System.out.println("\thorcrux " + i);
@@ -30,6 +36,9 @@ public class Voldemort extends Character {
     }
 
     public void castSpell(Spell spell) {
+        if (targets.isEmpty()) {
+            throw new StoryViolationException("Select your targets.");
+        } else
         for (Character victim : targets) {
             if (victim.getName() == "Harry") {
                 this.setHealth(0);

@@ -20,6 +20,9 @@ public class Character {
     }
 
     public void setName(String name) {
+        if (name.isEmpty() || name == null) {
+            throw new StoryViolationException("Name cannot be blank.");
+        } else
         this.name = name;
     }
 
@@ -28,6 +31,9 @@ public class Character {
     }
 
     public void setLocation(Location location) {
+        if (location == null) {
+            throw new StoryViolationException("Location cannot be null.");
+        } else
         this.location = location;
     }
 
@@ -44,6 +50,9 @@ public class Character {
     }
 
     public void setHealth(int health) {
+        if (health < 0 || health > 100) {
+            throw new StoryViolationException("Invalid health value.");
+        } else
         this.health = health;
     }
 
@@ -60,10 +69,16 @@ public class Character {
     }
 
     public void moveTo(Location location) {
+        if (location == null) {
+            throw new StoryViolationException("Invalid location.");
+        } else
         this.location = location;
     }
 
     public static void MoveAllTo(Location location, Character one, Character two) {
+        if (location == null) {
+            throw new StoryViolationException("Invalid location.");
+        } else
         one.location = location;
         two.location = location;
     }
